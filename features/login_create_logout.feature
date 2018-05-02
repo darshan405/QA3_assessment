@@ -1,26 +1,23 @@
-@bug_tracker
+@Login_Createbug_Logout
 Feature: As a end user
-I should be able open login and create a bug with all input successfully 
+I should be able login bug tracker application and create a bug with all input successfully 
 and I should able Logout successfully
 
-@bug_tracker_open_login_popup
-Scenario:Super bug tracker open login popup
+@Smoke
+Scenario: Login with valid credentials
 Given I am in bug tracker home page
-When I click login button
-And I should able to see login popup window
-And I am in bug tracker login popup window
-And I enter valid credential
-And I should able see Signed in Successfully
-And I am in bug tracker login dashboard
-And I click on create button
-And I should able see create new issue popup
-And I am in bug tracker create new issue popup
-And I enter the valid data to the respective fields and click ok
-Then I should able see the created issue in issue page
+When I login with valid credentials
+Then I should able to see message "Signed in Successfully"
 
-@bug_tracker_signout
-Scenario:Super bug tracker signout
+
+@Create_ValidBug
+Scenario: Create ValidBug
+Given I am in bug tracker create new issue popup
+When I create with valid credentials
+Then I should able to see the created issue in issue list
+
+@Signout
+Scenario: User signing out from the application
 Given I am in bug tracker issue page
 When I click signout
-Then I should able see the bug tracker dashboard
-
+Then I should able see the message as "Logged out!"
