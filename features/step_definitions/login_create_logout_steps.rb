@@ -24,7 +24,6 @@ When("I login with valid credentials") do
   @browser.find_element(id:"inputPassword").send_keys "Qwerty123#"
   sleep 2
   @browser.find_element(name:"commit").click
-  sleep 1
 end
 
 Then("I should able to see message {string}") do |var|
@@ -55,7 +54,7 @@ When("I create with valid credentials") do
   sleep 2
   @browser.find_element(id:"issue_issue_type").click
   sleep 2
-  @browser.find_element(xpath: "//div/form/div[2]/div[2]/div/select/option[2]").click
+  @browser.find_element(id:"issue_issue_type").send_keys "Bugs"
   sleep 2
   @browser.find_element(id:"Description3").click
   sleep 2
@@ -67,7 +66,7 @@ When("I create with valid credentials") do
   sleep 2
   @browser.find_element(id:"issue_status").click
   sleep 2
-  @browser.find_element(xpath: "//div/form/div[2]/div[2]/div/select/option[2]").click
+  @browser.find_element(id:"issue_status").send_keys "Open"
   sleep 2
   @browser.find_element(name:"commit").click
   sleep 2
