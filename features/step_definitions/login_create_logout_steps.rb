@@ -98,7 +98,7 @@ When("I click signout") do
   sleep 2
 end
 
-Then("I should able see the message as {string}") do |var|
+Then("I should able to see the message as {string}") do |var|
   a = @browser.find_element(xpath: "//div[1]/div/div/p").text
   if var == a
     puts "#{var}"

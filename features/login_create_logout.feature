@@ -20,4 +20,4 @@ Then I should able to see the created issue in issue list
 Scenario: User signing out from the application
 Given I am in bug tracker issue page
 When I click signout
-Then I should able see the message as "Logged out!"
+Then I should able to see the message as "Logged out!"
